@@ -66,3 +66,7 @@ listaAutos.forEach((autosEnVenta) => {
     botonComprar.innerText = "Comprar"
     contenedorAutos.append(botonComprar)
 })
+
+
+// https://www.youtube.com/watch?v=qSkXVDZwQ2I&list=PLizlJ35EN043b6tBgQCPM7qdaLdlBYwN4&index=6
+//minuto 14
