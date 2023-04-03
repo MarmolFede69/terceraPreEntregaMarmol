@@ -7,7 +7,7 @@ const listaAutos = [
         id: 1,
         nombre: "Ford Ka 1.5 Se 5 p",
         caracteristicas: "2019 • 89.085 km • Automática",
-        Precio: 4560000,
+        precio: 4560000,
         img: "https://http2.mlstatic.com/D_NQ_NP_2X_931853-MLA54747004682_032023-F.webp",
 
     },

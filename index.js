@@ -15,6 +15,12 @@ logout.addEventListener("click", () => {
     window.location.href = "login.html"
 })
 
+// Mi carrito //
+
+const verMiCarrito = document.getElementById("verMiCarrito")
+let miCarritoVacio = []
+
+
 
 // En esta parte recorremos el array y creamos una card para cada objeto //
 
@@ -33,6 +39,20 @@ listaAutos.forEach((autosEnVenta) => {
     botonComprar.className = "btn btn-success";
     botonComprar.innerText = "Comprar";
     contenedorAutos.append(botonComprar);
+
+    // le doy funcionalidad al boton para que almacene en el carrito con una prueba //
+
+    botonComprar.addEventListener("click", () => {
+        miCarritoVacio.push({
+            id: autosEnVenta.id,
+            img: autosEnVenta.img,
+            nombre: autosEnVenta.nombre,
+            caracteristicas: autosEnVenta.caracteristicas,
+            precio: autosEnVenta.precio
+        })
+        console.log(miCarritoVacio)
+    })
+
 })
 
 
