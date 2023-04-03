@@ -1,8 +1,12 @@
+// validacion de usuario para que solo el usuario en linea pueda recorrer el index //
+
 const usuariosEnLinea = JSON.parse(localStorage.getItem("usuarioEnLinea")) || false
 
 if (!usuariosEnLinea) {
     window.location.href = "login.html"
 }
+
+// un boton de salir que borra el storage  y redirige al usuario al login //
 
 const logout = document.getElementById("Salir")
 logout.addEventListener("click", () => {
@@ -12,61 +16,23 @@ logout.addEventListener("click", () => {
 })
 
 
-// ShopTopCar //
-
-const contenedorGeneralDeAutos = document.getElementById("contenedorGeneralDeAutos")
-
-const listaAutos = [
-    {
-        id: 1,
-        nombre: "Ford Ka 1.5 Se 5 p",
-        caracteristicas: "2019 • 89.085 km • Automática",
-        Precio: 4560000,
-        img: "https://http2.mlstatic.com/D_NQ_NP_2X_931853-MLA54747004682_032023-F.webp",
-
-    },
-    {
-        id: 2,
-        nombre: "Chevrolet Cruze II 1.4 Sedan At Ltz",
-        caracteristicas: "2021 • 50.712 km • Manual",
-        Precio: 5750000,
-        img: "https://http2.mlstatic.com/D_NQ_NP_664602-MLA54743981637_032023-O.webp",
-
-    },
-    {
-        id: 3,
-        nombre: "Peugeot 408 1.6 Feline Hdi 115cv",
-        caracteristicas: "2013 • 89.111 km • Manual",
-        Precio: 3430000,
-        img: "https://http2.mlstatic.com/D_NQ_NP_650735-MLA53002797586_122022-O.webp",
-
-    },
-    {
-        id: 4,
-        nombre: "Toyota Etios 1.5 Platinum 4 p AT L/17",
-        caracteristicas: "2017 • 63.538 km • Automática",
-        Precio: 4370000,
-        img: "https://http2.mlstatic.com/D_NQ_NP_857019-MLA54736514579_032023-O.webp",
-
-    },
-
-]
+// En esta parte recorremos el array y creamos una card para cada objeto //
 
 listaAutos.forEach((autosEnVenta) => {
     let contenedorAutos = document.createElement("div");
+    contenedorAutos.className = "cardAutos";
     contenedorAutos.innerHTML = `
     <img src="${autosEnVenta.img}">
     <h3>Nombre : ${autosEnVenta.nombre}</h3>
     <h3>Caracteristicas : ${autosEnVenta.caracteristicas}</h3>
-    <h3>Precio : ${autosEnVenta.Precio}</h3>
+    <p>Precio : ${autosEnVenta.Precio}</p>
     `;
-    contenedorGeneralDeAutos.append(contenedorAutos)
+    contenedorGeneralDeAutos.append(contenedorAutos);
 
     let botonComprar = document.createElement("button");
-    botonComprar.innerText = "Comprar"
-    contenedorAutos.append(botonComprar)
+    botonComprar.className = "btn btn-success";
+    botonComprar.innerText = "Comprar";
+    contenedorAutos.append(botonComprar);
 })
 
 
-// https://www.youtube.com/watch?v=qSkXVDZwQ2I&list=PLizlJ35EN043b6tBgQCPM7qdaLdlBYwN4&index=6
-//minuto 14
