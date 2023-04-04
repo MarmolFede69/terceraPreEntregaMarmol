@@ -59,7 +59,7 @@ listaAutos.forEach((autosEnVenta) => {
 //creo un modal donde se puedan reflejar mi carrito
 
 verMiCarrito.addEventListener("click", () => {
-    contenedorModal.innerHTML = "";
+
     contenedorModal.style.display = "flex"
     console.log("funciona el boton");
     const modalHeader = document.createElement("div");
@@ -77,23 +77,42 @@ verMiCarrito.addEventListener("click", () => {
     })
     modalHeader.append(modalBoton);
 
-    miCarritoVacio.forEach((autosCarrito) => {
+
+    miCarritoVacio.forEach((autosCarrito, index) => {
         let MicarritoAutos = document.createElement("div");
         MicarritoAutos.className = "cardCarritoStilos";
         MicarritoAutos.innerHTML = `
-        <img src="${autosCarrito.img}">
-        <h3>Nombre : ${autosCarrito.nombre}</h3>
-        <h3>Caracteristicas : ${autosCarrito.caracteristicas}</h3>
-         <p>Precio : ${autosCarrito.precio}</p> `;
+            <img src="${autosCarrito.img}">
+            <h3>Nombre : ${autosCarrito.nombre}</h3>
+            <h3>Caracteristicas : ${autosCarrito.caracteristicas}</h3>
+            <p>Precio : ${autosCarrito.precio}</p>
+            <button class="retirar-btn" data-index="${index}">Retirar</button> `
+            ;
 
         contenedorModal.append(MicarritoAutos);
+    });
 
-        const totalCarrito = miCarritoVacio.reduce((acumulador, precioAuto) => acumulador + precioAuto.precio, 0);
-        const totalEnUnDiv = document.createElement("div");
-        totalEnUnDiv.className = "totalEnUnDiv";
-        totalEnUnDiv.innerHTML = `Total a pagar : ${totalCarrito}`;
-        contenedorModal.append(totalEnUnDiv)
-    })
+    // Agrego la funcionalidad del boton retirar si me arrepiento
+
+    const retirarBtns = document.querySelectorAll(".retirar-btn");
+    retirarBtns.forEach((retirarBtn) => {
+        retirarBtn.addEventListener("click", (e) => {
+            const index = e.target.dataset.index;
+            miCarritoVacio.splice(index, 1);
+            contenedorModal.innerHTML = "";
+        });
+    });
+
+    const totalCarrito = miCarritoVacio.reduce((acumulador, precioAuto) => acumulador + precioAuto.precio, 0);
+    const totalEnUnDiv = document.createElement("div");
+    totalEnUnDiv.className = "totalEnUnDiv";
+    totalEnUnDiv.innerHTML = `Total a pagar : ${totalCarrito}`;
+    contenedorModal.append(totalEnUnDiv);
+
+
+
+
+
 
 
 })

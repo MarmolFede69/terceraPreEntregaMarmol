@@ -1,8 +1,15 @@
+/* body general */
+
 body {
-    background-color: gray;
+    background-image: url(https://img.freepik.com/vector-gratis/fondo-oscuro-fibra-carbono-lineas-metal_1017-23624.jpg?w=1060&t=st=1680573490~exp=1680574090~hmac=36fe12156746f763c7a60fbfa4ffa3c57bd0995c91f09c2504590b783d8fbca7);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100vh;
 }
+
+/* contenedores y card del index */
 
 .contenedorTitulo {
     margin: 30px;
@@ -12,7 +19,8 @@ body {
     margin-bottom: 100px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 10px;
     background: linear-gradient(white, gray, black);
 }
 
@@ -41,6 +49,52 @@ body {
     height: 200px;
 }
 
+
+/*  estilos de ingresar y registrate  */
+
+.tituloIndex {
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    padding-top: 100px;
+}
+
+
+#ContenedorIngresar,
+#ContenedorRegistrate {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 200px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#formIngresar,
+#formRegistrate {
+    width: 60%;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 10px;
+}
+
+.redireccionLink {
+    text-align: center;
+    margin: 30px auto;
+    padding: 10px;
+    width: 50%;
+    background: linear-gradient(white, gray);
+
+
+}
+
+
+
+/* modal y carrito */
 
 
 .stilos-modal {
