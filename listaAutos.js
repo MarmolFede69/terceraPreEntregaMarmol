@@ -15,7 +15,7 @@ const listaAutos = [
         id: 2,
         nombre: "Chevrolet Cruze II 1.4 Sedan At Ltz",
         caracteristicas: "2021 • 50.712 km • Manual",
-        Precio: 5750000,
+        precio: 5750000,
         img: "https://http2.mlstatic.com/D_NQ_NP_664602-MLA54743981637_032023-O.webp",
 
     },
@@ -23,7 +23,7 @@ const listaAutos = [
         id: 3,
         nombre: "Peugeot 408 1.6 Feline Hdi 115cv",
         caracteristicas: "2013 • 89.111 km • Manual",
-        Precio: 3430000,
+        precio: 3430000,
         img: "https://http2.mlstatic.com/D_NQ_NP_650735-MLA53002797586_122022-O.webp",
 
     },
@@ -31,7 +31,7 @@ const listaAutos = [
         id: 4,
         nombre: "Toyota Etios 1.5 Platinum 4 p AT L/17",
         caracteristicas: "2017 • 63.538 km • Automática",
-        Precio: 4370000,
+        precio: 4370000,
         img: "https://http2.mlstatic.com/D_NQ_NP_857019-MLA54736514579_032023-O.webp",
 
     },

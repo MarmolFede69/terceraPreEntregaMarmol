@@ -19,6 +19,7 @@ logout.addEventListener("click", () => {
 
 const verMiCarrito = document.getElementById("verMiCarrito")
 let miCarritoVacio = []
+const contenedorModal = document.getElementById("contenedor-modal")
 
 
 
@@ -52,6 +53,48 @@ listaAutos.forEach((autosEnVenta) => {
         })
         console.log(miCarritoVacio)
     })
+
+})
+
+//creo un modal donde se puedan reflejar mi carrito
+
+verMiCarrito.addEventListener("click", () => {
+    contenedorModal.innerHTML = "";
+    contenedorModal.style.display = "flex"
+    console.log("funciona el boton");
+    const modalHeader = document.createElement("div");
+    modalHeader.className = "modalHeader";
+    modalHeader.innerHTML = `
+    <h1 class="modalTitulo">Mi carrito</h1>
+    `;
+    contenedorModal.append(modalHeader);
+
+    const modalBoton = document.createElement("h1");
+    modalBoton.innerText = "❌";
+    modalBoton.className = "boton-modal-estilos btn btn-link";
+    modalBoton.addEventListener("click", () => {
+        contenedorModal.style.display = "none";
+    })
+    modalHeader.append(modalBoton);
+
+    miCarritoVacio.forEach((autosCarrito) => {
+        let MicarritoAutos = document.createElement("div");
+        MicarritoAutos.className = "cardCarritoStilos";
+        MicarritoAutos.innerHTML = `
+        <img src="${autosCarrito.img}">
+        <h3>Nombre : ${autosCarrito.nombre}</h3>
+        <h3>Caracteristicas : ${autosCarrito.caracteristicas}</h3>
+         <p>Precio : ${autosCarrito.precio}</p> `;
+
+        contenedorModal.append(MicarritoAutos);
+
+        const totalCarrito = miCarritoVacio.reduce((acumulador, precioAuto) => acumulador + precioAuto.precio, 0);
+        const totalEnUnDiv = document.createElement("div");
+        totalEnUnDiv.className = "totalEnUnDiv";
+        totalEnUnDiv.innerHTML = `Total a pagar : ${totalCarrito}`;
+        contenedorModal.append(totalEnUnDiv)
+    })
+
 
 })
 
