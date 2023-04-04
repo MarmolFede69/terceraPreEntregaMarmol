@@ -23,6 +23,9 @@ const contenedorModal = document.getElementById("contenedor-modal")
 
 
 
+
+
+
 // En esta parte recorremos el array y creamos una card para cada objeto //
 
 listaAutos.forEach((autosEnVenta) => {
@@ -56,6 +59,9 @@ listaAutos.forEach((autosEnVenta) => {
 
 })
 
+
+
+
 //creo un modal donde se puedan reflejar mi carrito
 
 verMiCarrito.addEventListener("click", () => {
@@ -74,9 +80,11 @@ verMiCarrito.addEventListener("click", () => {
     modalBoton.className = "boton-modal-estilos btn btn-link";
     modalBoton.addEventListener("click", () => {
         contenedorModal.style.display = "none";
+        contenedorModal.innerHTML = "";
     })
     modalHeader.append(modalBoton);
 
+    // Aca lleno el carrito el auto o lo autos que querramos //
 
     miCarritoVacio.forEach((autosCarrito, index) => {
         let MicarritoAutos = document.createElement("div");
@@ -116,5 +124,10 @@ verMiCarrito.addEventListener("click", () => {
 
 
 })
+
+
+
+
+
 
 

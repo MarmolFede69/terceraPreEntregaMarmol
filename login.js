@@ -18,6 +18,7 @@ formIngresar.addEventListener("submit", (Event) => {
     if (!validarUsuario) {
         return alert("usuario y/o contraseña incorrecto")
 
+
     }
 
     // De lo contrario redirecciono al programa.
